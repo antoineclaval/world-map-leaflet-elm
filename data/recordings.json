@@ -1,0 +1,15 @@
+{
+    "recordings":
+    [
+        {"recordingTimeUTC" : "2019-09-16T20:12:57.341Z", "wakeUpTimeLocalMilitaryStyle" : "07H23" , "locationLocal" : "Islamabad, Pakistan", "latitude" : "33.738045" , "longitude": "73.084488"},
+        {"recordingTimeUTC" : "2019-09-16T21:14:57.341Z", "wakeUpTimeLocalMilitaryStyle" : "08H00" , "locationLocal" : "La Nouvelle-Orléans, Louisiane, États-Unis", "latitude" : "29.9793939" , "longitude": "90.0538078"},
+        {"recordingTimeUTC" : "2019-09-16T12:12:57.341Z", "wakeUpTimeLocalMilitaryStyle" : "07H00" , "locationLocal" : "Chittagong, Bangladesh", "latitude" : "22.341900" , "longitude": "91.815536"},
+        {"recordingTimeUTC" : "2019-09-16T12:12:57.341Z", "wakeUpTimeLocalMilitaryStyle" : "07H00" , "locationLocal" : "Chittagong, Bangladesh", "latitude" : "22.341900" , "longitude": "91.815536"},
+        {"recordingTimeUTC" : "2019-09-16T12:12:57.341Z", "wakeUpTimeLocalMilitaryStyle" : "07H00" , "locationLocal" : "Avgonima, Chios, Greece", "latitude" : "38.376915" , "longitude": "26.022394"},
+        {"recordingTimeUTC" : "2019-09-16T12:12:57.341Z", "wakeUpTimeLocalMilitaryStyle" : "07H00" , "locationLocal" : "Chittagong, Bangladesh", "latitude" : "22.341900" , "longitude": "91.815536"},
+        {"recordingTimeUTC" : "2019-09-16T12:12:57.341Z", "wakeUpTimeLocalMilitaryStyle" : "07H00" , "locationLocal" : "Hạ Hòa, Quốc Oai, Hanoi, Vietnam", "latitude" : "20.962406" , "longitude": "105.698448"},
+        {"recordingTimeUTC" : "2019-09-16T12:12:57.341Z", "wakeUpTimeLocalMilitaryStyle" : "07H00" , "locationLocal" : "Tromsdalen, Tromsø, Norway", "latitude" : "69.650253" , "longitude": "18.995115"},
+        {"recordingTimeUTC" : "2019-09-16T12:12:57.341Z", "wakeUpTimeLocalMilitaryStyle" : "07H00" , "locationLocal" : "Port Maria, Jamaica", "latitude" : "18.370247" , "longitude": "-76.890305"},
+        {"recordingTimeUTC" : "2019-09-16T12:12:57.341Z", "wakeUpTimeLocalMilitaryStyle" : "07H00" , "locationLocal" : "Bourem, Mali", "latitude" : "16.956232" , "longitude": "-0.344245"}
+    ]
+}
