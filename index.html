@@ -9,21 +9,19 @@
     integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
     crossorigin=""
   />
-  <style>
-    html,body,#worldmap{
-      height:100%;
-    }
-  </style>
+  <link rel="stylesheet" href="map.css" media="screen" />
 </head>  
 <body>  
-        <div id="worldmap"></div>
-        <div class="country-name"></div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.6/chroma.min.js"></script>
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
-        <script src="https://d3js.org/topojson.v1.min.js"></script>
-      <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
-        integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
-        crossorigin=""></script>
+  <div id="worldmap"></div>
+  <div class="country-name"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.6/chroma.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+  <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+  integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+  crossorigin=""></script>
+
   <script>
     L.TopoJSON = L.GeoJSON.extend({
       addData: function(jsonData) {    
@@ -45,7 +43,6 @@
       var countryMapping;
       $.getJSON('data/countryMapping.json', function(response){
            countryMapping = response;
-            console.log(countryMapping);
       }).error(function(e) { console.log("error during data/countryMapping.json processing"); console.log(e) })
   </script>
 
@@ -73,10 +70,9 @@
         }
 
         function retriveCountryValue(ISO_A2_countryCode){
-          console.log("ISO_A2_countryCode:" + ISO_A2_countryCode);
+          //console.log("ISO_A2_countryCode:" + ISO_A2_countryCode);
           if (! ISO_A2_countryCode || ISO_A2_countryCode === "-" ) return 0 ;
           let resolvedValue = countryMapping.countries[ISO_A2_countryCode].value || 0 ;
-          console.log(resolvedValue);
           return resolvedValue;
         }
     
@@ -99,7 +95,8 @@
         }
     
         function enterLayer(){
-          var countryName = this.feature.properties.name;
+          var countryName = this.feature.properties.ADMIN;
+          console.log("country name :" + countryName);
           $tooltip.text(countryName).show();
           
           this.bringToFront();
