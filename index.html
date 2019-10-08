@@ -2,7 +2,7 @@
 <html>  
 <head>  
   <meta charset="UTF-8">
-  <title>maps with leaflet & topojson</title>
+  <title>leaflet & topojson POC</title>
   <link 
     rel="stylesheet" 
     href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
@@ -44,6 +44,9 @@
       $.getJSON('data/countryMapping.json', function(response){
            countryMapping = response;
       }).error(function(e) { console.log("error during data/countryMapping.json processing"); console.log(e) })
+
+
+
   </script>
 
   <script>
@@ -56,7 +59,7 @@
           topoLayer = new L.TopoJSON(),
           $tooltip = $('.country-name'),
           colorScale = chroma
-            .scale(['#b5651d', '#654321'])
+            .scale(['#D5E3FF', '#003171'])
             .domain([0,100]);
         
         map.setView([43,3], 3);
@@ -67,6 +70,22 @@
           topoLayer.addData(topoData);
           topoLayer.addTo(map);
           topoLayer.eachLayer(handleLayer);
+        }
+
+// filename: "2019-04-26T17:21:19.983Z--13:20@GlenCove-NY-USA#40.89040119670414#-73.62983557402494.wav"
+// latitude: "40.8904011967041"
+// locationLocal: "GlenCove-NY-USA"
+// longitude: "-73.6298355740249"
+// recordingTimeUTC: "2019-04-26T17:21:19.983Z"
+// wakeUpTimeLocalMilitaryStyle: "13:20"
+        $.getJSON('data/recordings.json').done(addMarkerData);
+
+        function addMarkerData(markerData){
+          markerData.recordings.forEach(function(record) {
+            //console.log(record);
+            L.marker([record.latitude, record.longitude]).addTo(map).bindPopup("<b>" + record.locationLocal +"</b><br>"+ record.wakeUpTimeLocalMilitaryStyle +"</b><br>"+ record.recordingTimeUTC + 
+            "<audio controls src=\"" + "/data/" +encodeURIComponent( record.filename) +   "\" </audio>" );
+          });
         }
 
         function retriveCountryValue(ISO_A2_countryCode){
